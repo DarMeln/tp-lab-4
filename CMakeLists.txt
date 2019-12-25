@@ -19,13 +19,13 @@ file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp)
 
 
 set(SRC_FILES ${PROJECT_SOURCE_DIR}/src/main.cpp
-              ${PROJECT_SOURCE_DIR}/src/automata.cpp)
+              ${PROJECT_SOURCE_DIR}/src/Automata.cpp)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_library(task_lib ${SRC_FILES})
-add_executable(task ${SRC_FILES})
-target_link_libraries(task task_lib)
+add_library(task1_lib ${SRC_FILES})
+add_executable(task1 ${SRC_FILES})
+target_link_libraries(task1 task1_lib)
 
 
 ################################
@@ -52,7 +52,7 @@ if (BUILD_TESTS)
 
   # Standard linking to gtest stuff.
   target_link_libraries(runUnitTests gtest gtest_main)
-
+  target_link_libraries(runUnitTests task1_lib)
   # Extra linking for the project.
   #target_link_libraries(runUnitTests task1_lib task2_lib task3_lib)
 
@@ -71,3 +71,4 @@ if (BUILD_TESTS)
   endif() #CMAKE_BUILD_TYPE STREQUAL "Coverage"
 
 endif()
+
