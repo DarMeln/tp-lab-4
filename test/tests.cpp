@@ -2,6 +2,8 @@
 #include "Automata.h"
 #include <string.h>
 
+using namespace std;
+
 // task1
 TEST(lab1,task1_1)
 {
