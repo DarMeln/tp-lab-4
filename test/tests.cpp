@@ -9,7 +9,7 @@ TEST(lab1,task1_1)
 {
     Automata machine;
     machine.on();
-    string res=machine->state;
+    string res=machine.state;
     EXPECT_EQ(1,res);
 }
 TEST(lab1,task1_2)
@@ -18,6 +18,6 @@ TEST(lab1,task1_2)
     machine.coin(5);
     machine.coin(10);
     machine.choice(1);
-    int res = machine->state;
+    int res = machine.state;
     EXPECT_EQ(1,res);
 }
